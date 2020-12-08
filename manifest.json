@@ -1,14 +1,9 @@
 {
    "name": "ban-harry",
    "version": "0.1",
-   "description": "i hate the franchise.",
+   "description": "turns harry potter into the loser he is",
    "permissions": ["storage"],
-   "background": {
-     "scripts": ["background.js"],
-     "persistent": false
-   },
    "page_action": {
-     "default_popup": "popup.html",
      "default_icon": {
         "16": "images/icon16.png",
         "32": "images/icon32.png",
@@ -16,6 +11,18 @@
         "128": "images/icon128.png"
       }
    },
+   "content_scripts": [
+    {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ],
+        "js": [
+            "content.js"
+        ],
+        "run_at": "document_end"
+    }
+  ],
    "icons": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",
